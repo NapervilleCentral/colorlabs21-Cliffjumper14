@@ -2,7 +2,6 @@
 /**
  * Kevin Hayes
  * Test Picture Classes
- *
  * @author (Kevin Hayes)
  * @version (10-19-2016)
  */
@@ -35,14 +34,18 @@ public class TestPicture17
      Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
 
      //apic.explore(); //displays the pic
-     ferris1.explore();
-     moto.explore();
-     apic.explore();
+     //ferris1.explore();
+     //moto.explore();
+     //apic.explore();
      //GONNA HAVE TO DO THIS:::::::::::::***
      //makes an array of pixels
      Pixel[] pixels;
      //gets pixels from picture and assigns to pixels array
      pixels = ferris1.getPixels();
+     
+     Pixel[] mpixels;
+     mpixels = moto.getPixels();
+     
     //******
      //how many pixels or how large array
     System.out.println("This is a large array"+pixels.length  );
@@ -52,7 +55,7 @@ public class TestPicture17
         //access each index
     System.out.println(pixels[17]);
     //access each pixel
-    Pixel spot = ferris1.getPixel(100,100);
+    Pixel spot = ferris1.getPixel(300,300);
     Pixel spot2 = ferris1.getPixel(433,283);
     Pixel ferr17 = pixels[17];
     
@@ -64,15 +67,16 @@ public class TestPicture17
     spot2.setColor(Color.blue);
     spot.setColor(newColor);
     
-    ferris1.explore();
+    //ferris1.explore();
     System.out.println(pixels[17].getColor());
     System.out.println(spot);
-    for (int i = 0; i<10000; i++)
+    //randomly colored pixels 10000 times
+    for (int i = 0; i<200000; i++)
     {
-        Pixel yuck = ferris1.getPixel((int)(Math.random()*500), (int)(Math.random() * 500));
+        Pixel yuck = ferris1.getPixel((int)(Math.random()*1000), (int)(Math.random() * 668));
         yuck.setColor(Color.green);
     }
-    ferris1.explore();
+    //ferris1.explore();
     
     
     
@@ -82,13 +86,32 @@ public class TestPicture17
     pixels[500034].setColor(Color.blue);
 
     ferris1.explore();
-/*
+/**/
    // loop to access indexes of array or collection
 
     //for each loop spot  is a ?
-    for (Pixel spot : pixels)
-    System.out.println( spot );
+    //goes through all the pixels
+    int red;
+    int blue;
+    int green;
+    for (Pixel spot1 : mpixels){
+        //System.out.println( spot1 );
+        red = spot1.getRed();
+        blue = spot1.getBlue();
+        green = spot1.getGreen();
+        
+        
+        red = (int)(red * .0000000);
+        blue = (int)(blue * 2);
+        green = (int)(green * .000000000);
+        
+        spot1.setRed(red);
+        spot1.setGreen(green);
+        spot1.setBlue(blue);
+        
+    }
 
+    moto.explore();
 
    
  /**/
