@@ -77,23 +77,22 @@ public class TestPicture17
         yuck.setColor(Color.green);
     }
     //ferris1.explore();
-    
-    
-    
 /*
     pixels[17].setColor(Color.blue);
     spot.setColor(new Color(252,252,252));
     pixels[500034].setColor(Color.blue);
-
     ferris1.explore();
 /**/
-   // loop to access indexes of array or collection
-
-    //for each loop spot  is a ?
-    //goes through all the pixels
+//●1 of adjustRed(double factor), adjustGreen(double factor),adjustBlue(double factor)
+//●negate()
+//●grayscale()
+//●lighten() or darken()
+//●changeColor()
+//●colorify() or blueify()
     int red;
     int blue;
     int green;
+    //FIRST ONE*)*&*^#*@^$*&@#^*$^@*&$@^$*&@^*(%^*@$&^*(@^*$#^#@^
     for (Pixel spot1 : mpixels){
         //System.out.println( spot1 );
         red = spot1.getRed();
@@ -101,18 +100,34 @@ public class TestPicture17
         green = spot1.getGreen();
         
         
-        red = (int)(red * .0000000);
+        red = (int)(red * 2);
         blue = (int)(blue * 2);
-        green = (int)(green * .000000000);
+        green = (int)(green * 2);
         
         spot1.setRed(red);
         spot1.setGreen(green);
         spot1.setBlue(blue);
         
     }
-
     moto.explore();
-
+    //SECOND ONE 239587496868632486598734640397(*&^%&$%#@
+    for (Pixel spot1 : mpixels){
+        //System.out.println( spot1 );
+        red = spot1.getRed();
+        blue = spot1.getBlue();
+        green = spot1.getGreen();
+        
+        
+        red = (int)(red * 2);
+        blue = (int)(blue * 2);
+        green = (int)(green * 2);
+        
+        spot1.setRed(red);
+        spot1.setGreen(green);
+        spot1.setBlue(blue);
+        
+    }
+    moto.explore();
    
  /**/
 
