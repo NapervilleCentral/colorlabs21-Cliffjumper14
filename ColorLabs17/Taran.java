@@ -13,6 +13,7 @@ public class Taran
         int red;
         int blue;
         int green;
+        int grey;
         Pixel[] mpixels;
         mpixels = ferris1.getPixels();
         ferris1.explore();
@@ -21,11 +22,11 @@ public class Taran
             red = spotm.getRed();
             blue = spotm.getBlue();
             green = spotm.getGreen();
+            grey = (int)(red + blue + green)/3;
             
-            
-            red = (int)(255-red);
-            blue = (int)(255-blue);
-            green = (int)(255-green);
+            red = (int)(255-grey);
+            blue = (int)(200);
+            green = (int)(150);
             
             spotm.setRed(red);
             spotm.setGreen(green);
