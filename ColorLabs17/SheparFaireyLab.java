@@ -6,20 +6,19 @@ public class SheparFaireyLab
     public static void main(String[] args)
     {
         Picture fairy = new Picture("images/fairy.jpg");
-        fairy.explore();
+        Picture fairy2 = new Picture("images/fairy.jpg");
+        //fairy.explore();
         Pixel[] fairypixels = fairy.getPixels();
-        int smallest = 255;
-        int largest = 0;
-        
+        Pixel[] fairypixels2 = fairy2.getPixels();
+        int s = 255;
+        int l = 0;
+        //METHOD ONE CHANGE
         for (Pixel spot : fairypixels) {
             int red = spot.getRed();
             int blue = spot.getBlue();
             int green = spot.getGreen();
-
             // Convert to grayscale
             int grey = (red + blue + green) / 3;
-
-            // Map grayscale value to colors:
             if (grey >= 0 && grey <= 63) {
                 // Dark Blue
                 spot.setRed(0);
@@ -45,15 +44,23 @@ public class SheparFaireyLab
                 spot.setBlue(161);
             }
         }
-        // Display the final image
         fairy.explore();
+        //METHOD 2 CHANGE
+        for (Pixel spot2 : fairypixels2) {
+            int red = spot2.getRed();
+            int blue = spot2.getBlue();
+            int green = spot2.getGreen();
+            int grey = (red + green + blue) / 3;
+            // Convert to grayscale
+            if (grey < s) {
+                s = grey;
+            }
+            if (grey > l) {
+                l = grey;
+            }
+        } 
     }
 }
-
-         /**
-          * method 1 change
-          * 
-          */
          
          /**
           * method 2 change
