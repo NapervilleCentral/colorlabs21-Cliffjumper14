@@ -38,6 +38,7 @@ public class TestPicture17
         Picture qmoto = new Picture("images/redMotorcycle.jpg");
         Picture rmoto = new Picture("images/redMotorcycle.jpg");
         Picture smoto = new Picture("images/redMotorcycle.jpg");
+        Picture tmoto = new Picture("images/blue-mark.jpg");
         Picture ferris3 = new Picture("images/2000 ferris wheel2.jpg");
     
         //apic.explore(); //displays the pic
@@ -240,13 +241,27 @@ public class TestPicture17
             spots.setGreen(green);
             spots.setBlue(blue);
         }
-        //moto.explore();
-        //nmoto.explore();
-        //omoto.explore();
-        //pmoto.explore();
-        //qmoto.explore();
-        //rmoto.explore();
+        Pixel[] tpixels;
+        tpixels = tmoto.getPixels();
+        tmoto.explore();
+      for (Pixel spott: tpixels){
+          red = spott.getRed();  
+          green = spott.getGreen();
+          blue = spott.getBlue();
+          if (blue>30 && blue<255 && red < 20){
+              spott.setRed(0);
+              spott.setGreen(255);
+              spott.setBlue(0);
+            }
+        }
+        moto.explore();
+        nmoto.explore();
+        omoto.explore();
+        pmoto.explore();
+        qmoto.explore();
+        rmoto.explore();
         smoto.explore();
+        tmoto.explore();
         /**/
 
         /**
