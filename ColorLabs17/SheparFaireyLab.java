@@ -7,7 +7,7 @@ public class SheparFaireyLab
     {
         Picture fairy = new Picture("images/fairy.jpg");
         Picture fairy2 = new Picture("images/fairy.jpg");
-        //fairy.explore();
+        fairy.explore();
         Pixel[] fairypixels = fairy.getPixels();
         Pixel[] fairypixels2 = fairy2.getPixels();
         int s = 255;
