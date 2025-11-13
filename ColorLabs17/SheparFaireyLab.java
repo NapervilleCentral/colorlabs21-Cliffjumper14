@@ -7,9 +7,11 @@ public class SheparFaireyLab
     {
         Picture fairy = new Picture("images/fairy.jpg");
         Picture fairy2 = new Picture("images/fairy.jpg");
+        Picture fairy3 = new Picture("images/fairy.jpg");
         fairy.explore();
         Pixel[] fairypixels = fairy.getPixels();
         Pixel[] fairypixels2 = fairy2.getPixels();
+        Pixel[] fairypixels3 = fairy3.getPixels();
         int s = 255;
         int l = 0;
         //METHOD ONE CHANGE
@@ -45,71 +47,75 @@ public class SheparFaireyLab
             }
         }
         fairy.explore();
-        //fairy.write("images/sf3.jpg");
-        /*
         //METHOD 2 CHANGE
+        int prev = 0, big = 0, small = 0;
         for (Pixel spot2 : fairypixels2) {
             int red = spot2.getRed();
             int blue = spot2.getBlue();
             int green = spot2.getGreen();
-            int grey = (red + green + blue) / 3;
+            int avg = (red + green + blue) / 3;
             // Convert to grayscale
-            if (grey < s) {
-                s = grey;
+            if (avg > prev && avg > big) {
+                big = avg;
             }
-            if (grey > l) {
-                l = grey;
+            if (avg<small) {
+                small = avg;
             }
         } 
-        */
+        int range = 0;
+        for (Pixel spot2 : fairypixels2) {
+            range = (big-small) / 4;
+            int red = spot2.getRed();
+            if (red <= range)
+                spot2.setColor(new Color ( 7,15,168));
+            else if (red > range && red <= range*2)
+                spot2.setColor(new Color(207, 23, 6));
+            else if (red > range*2 && red <= range*3){
+                spot2.setColor(new Color(32,181,245));
+            }
+            else
+                spot2.setColor(new Color(240, 243, 245));
+        }
+        fairy2.explore();
         //NUMBER 3
-        
-        /*
-        red green blue
-        90  219  181
-        156 114  103
-        0   0    0
-        100 134  124
-        97  79   74
-        */
-        for (Pixel spot : fairypixels2) {
+        for (Pixel spot : fairypixels3) {
             int red = spot.getRed();
             int blue = spot.getBlue();
             int green = spot.getGreen();
             // Convert to grayscale
             int grey = (red + blue + green) / 3;
             if (grey >= 0 && grey <= 51) {
-                // Dark Blue
+                //Black
                 spot.setRed(0);
                 spot.setGreen(0);
                 spot.setBlue(0);
             } 
             else if (grey <= 102) {
-                // Red
+                //rose brown
                 spot.setRed(156);
                 spot.setGreen(114);
                 spot.setBlue(103);
             } 
             else if (grey <=153) {
-                // Light Blue
-
+                //light teal
                 spot.setRed(90);
                 spot.setGreen(219);
                 spot.setBlue(181);
             } 
             else if (grey<= 204) {
-                // Cream White
+                //dusty teal/gray green
                 spot.setRed(100);
                 spot.setGreen(134);
                 spot.setBlue(124);
             }
             else {
+                //dark brown
                 spot.setRed(97);
                 spot.setGreen(79);
                 spot.setBlue(74);
             }
-            
         }
-        fairy2.explore();
+        fairy3.explore();
+        fairy3.write("images/sf5.jpg");
     }
 }
