@@ -23,19 +23,19 @@ public class SheparFaireyLab
                 // Dark Blue
                 spot.setRed(0);
                 spot.setGreen(0);
-                spot.setBlue(139);
+                spot.setBlue(100);
             } 
             else if (grey <= 127) {
                 // Red
-                spot.setRed(255);
+                spot.setRed(140);
                 spot.setGreen(0);
                 spot.setBlue(0);
             } 
             else if (grey <= 191) {
                 // Light Blue
                 spot.setRed(173);
-                spot.setGreen(216);
-                spot.setBlue(230);
+                spot.setGreen(190);
+                spot.setBlue(210);
             } 
             else {
                 // Cream White
@@ -45,6 +45,8 @@ public class SheparFaireyLab
             }
         }
         fairy.explore();
+        //fairy.write("images/sf3.jpg");
+        /*
         //METHOD 2 CHANGE
         for (Pixel spot2 : fairypixels2) {
             int red = spot2.getRed();
@@ -59,14 +61,55 @@ public class SheparFaireyLab
                 l = grey;
             }
         } 
+        */
+        //NUMBER 3
+        
+        /*
+        red green blue
+        90  219  181
+        156 114  103
+        0   0    0
+        100 134  124
+        97  79   74
+        */
+        for (Pixel spot : fairypixels2) {
+            int red = spot.getRed();
+            int blue = spot.getBlue();
+            int green = spot.getGreen();
+            // Convert to grayscale
+            int grey = (red + blue + green) / 3;
+            if (grey >= 0 && grey <= 51) {
+                // Dark Blue
+                spot.setRed(0);
+                spot.setGreen(0);
+                spot.setBlue(0);
+            } 
+            else if (grey <= 102) {
+                // Red
+                spot.setRed(156);
+                spot.setGreen(114);
+                spot.setBlue(103);
+            } 
+            else if (grey <=153) {
+                // Light Blue
+
+                spot.setRed(90);
+                spot.setGreen(219);
+                spot.setBlue(181);
+            } 
+            else if (grey<= 204) {
+                // Cream White
+                spot.setRed(100);
+                spot.setGreen(134);
+                spot.setBlue(124);
+            }
+            else {
+                spot.setRed(97);
+                spot.setGreen(79);
+                spot.setBlue(74);
+            }
+            
+        }
+        fairy2.explore();
     }
 }
-         
-         /**
-          * method 2 change
-          * 
-          */
-         
-         /**
-          * custom color palette
-          */
