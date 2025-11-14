@@ -67,14 +67,14 @@ public class SheparFaireyLab
             range = (big-small) / 4;
             int red = spot2.getRed();
             if (red <= range)
-                spot2.setColor(new Color ( 7,15,168));
+                spot2.setColor(new Color ( 0,0,100));
             else if (red > range && red <= range*2)
-                spot2.setColor(new Color(207, 23, 6));
+                spot2.setColor(new Color(140, 0, 0));
             else if (red > range*2 && red <= range*3){
                 spot2.setColor(new Color(32,181,245));
             }
             else
-                spot2.setColor(new Color(240, 243, 245));
+                spot2.setColor(new Color(220, 199, 161));
         }
         fairy2.explore();
         //NUMBER 3
@@ -83,33 +83,63 @@ public class SheparFaireyLab
             int blue = spot.getBlue();
             int green = spot.getGreen();
             // Convert to grayscale
-            int grey = (red + blue + green) / 3;
-            if (grey >= 0 && grey <= 51) {
-                //Black
+            int grey = (red + blue + green) / 3;            
+            if (grey <= 25) {
+                // black
                 spot.setRed(0);
                 spot.setGreen(0);
                 spot.setBlue(0);
-            } 
-            else if (grey <= 102) {
-                //rose brown
+            
+            } else if (grey <= 51) {
+                // charcoal
+                spot.setRed(40);
+                spot.setGreen(40);
+                spot.setBlue(40);
+            
+            } else if (grey <= 76) {
+                // rose brown
                 spot.setRed(156);
                 spot.setGreen(114);
                 spot.setBlue(103);
-            } 
-            else if (grey <=153) {
-                //light teal
+            
+            } else if (grey <= 102) {
+                // warm sand
+                spot.setRed(194);
+                spot.setGreen(178);
+                spot.setBlue(128);
+            
+            } else if (grey <= 128) {
+                // light teal 
                 spot.setRed(90);
                 spot.setGreen(219);
                 spot.setBlue(181);
-            } 
-            else if (grey<= 204) {
-                //dusty teal/gray green
+            
+            } else if (grey <= 153) {
+                // pastel aqua
+                spot.setRed(150);
+                spot.setGreen(230);
+                spot.setBlue(220);
+            
+            } else if (grey <= 178) {
+                // dusty teal/gray green 
                 spot.setRed(100);
                 spot.setGreen(134);
                 spot.setBlue(124);
-            }
-            else {
-                //dark brown
+            
+            } else if (grey <= 204) {
+                // slate blue
+                spot.setRed(112);
+                spot.setGreen(136);
+                spot.setBlue(160);
+            
+            } else if (grey <= 230) {
+                // warm taupe
+                spot.setRed(140);
+                spot.setGreen(125);
+                spot.setBlue(115);
+            
+            } else {
+                // dark brown 
                 spot.setRed(97);
                 spot.setGreen(79);
                 spot.setBlue(74);
