@@ -5,10 +5,11 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+//I JUST DID THIS FOR FUN DON'T GRADE THIS PLEASE
 public class Elena
 {
     public static void main(String[] args){
-        Picture Elena1 = new Picture("images/Elena2.jpg");
+        Picture Elena1 = new Picture("images/Elena1.jpg");
         Picture Elena2 = new Picture("images/Elena2.jpg");
         Picture Elena3 = new Picture("images/Elena2.jpg");
         Picture Elena4 = new Picture("images/Elena2.jpg");
@@ -155,9 +156,10 @@ public class Elena
             }
         }
         Elena1.explore();
-        Elena2.explore();
-        Elena3.explore();
-        Elena4.explore();
-        Elena5.explore();
+        //Elena2.explore();
+        //Elena3.explore();
+        //Elena4.explore();
+        //Elena5.explore();
+        Elena1.write("images/Elenafairy.jpg");
     }
 }

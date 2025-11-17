@@ -8,7 +8,7 @@ public class SheparFaireyLab
         Picture fairy = new Picture("images/fairy.jpg");
         Picture fairy2 = new Picture("images/fairy.jpg");
         Picture fairy3 = new Picture("images/fairy.jpg");
-        fairy.explore();
+        //fairy.explore();
         Pixel[] fairypixels = fairy.getPixels();
         Pixel[] fairypixels2 = fairy2.getPixels();
         Pixel[] fairypixels3 = fairy3.getPixels();
@@ -46,7 +46,7 @@ public class SheparFaireyLab
                 spot.setBlue(161);
             }
         }
-        fairy.explore();
+        //fairy.explore();
         //METHOD 2 CHANGE
         int prev = 0, big = 0, small = 0;
         for (Pixel spot2 : fairypixels2) {
@@ -76,7 +76,7 @@ public class SheparFaireyLab
             else
                 spot2.setColor(new Color(220, 199, 161));
         }
-        fairy2.explore();
+        //fairy2.explore();
         //NUMBER 3
         for (Pixel spot : fairypixels3) {
             int red = spot.getRed();
@@ -146,6 +146,6 @@ public class SheparFaireyLab
             }
         }
         fairy3.explore();
-        fairy3.write("images/sf5.jpg");
+        //fairy3.write("images/sf5.jpg");
     }
 }
