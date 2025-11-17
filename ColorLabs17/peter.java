@@ -12,6 +12,7 @@ public class peter
     {
         Picture fairy3 = new Picture("images/peter.jpg");
         Pixel[] fairypixels3 = fairy3.getPixels();
+        fairy3.explore();
         //NUMBER 3
         for (Pixel spot : fairypixels3) {
             int red = spot.getRed();
