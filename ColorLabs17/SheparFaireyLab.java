@@ -145,6 +145,8 @@ public class SheparFaireyLab
                 spot.setBlue(74);
             }
         }
+        fairy.explore();
+        fairy2.explore();
         fairy3.explore();
         //fairy3.write("images/sf5.jpg");
     }

@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=poster
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=source
+comment2.target=void\ mirrorVertical(Picture)
+comment2.text=\n\ \ \ \ \ Method\ to\ mirror\ across\ the\ y\ axis.\n\ \ \ \ \ Do\ it\ based\ on\ width\n
+comment3.params=source
+comment3.target=void\ mirrorHorizontal(Picture)
+comment4.params=source
+comment4.target=void\ flipX(Picture)
+comment5.params=source
+comment5.target=void\ flipY(Picture)
+comment6.params=source
+comment6.target=void\ recolor(Picture)
+comment7.params=source
+comment7.target=void\ recolor2(Picture)
+comment8.params=source
+comment8.target=void\ recolor3(Picture)
+comment9.params=source\ target\ x\ y
+comment9.target=void\ copytoCanvas(Picture,\ Picture,\ int,\ int)
+numComments=10
