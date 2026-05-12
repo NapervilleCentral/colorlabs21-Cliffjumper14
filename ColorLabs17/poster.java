@@ -12,8 +12,7 @@ public class poster
 {
     //main method
     public static void main(String[] args) throws Exception
-    {
-                
+    {    
         Picture canvas = new Picture("images/newCanvas.jpg");
         
         // TOP LEFT
@@ -29,6 +28,7 @@ public class poster
         Picture posterphoto3 = new Picture("images/backflips.jpg");
         mirrorHorizontal(posterphoto3);
         copytoCanvas(posterphoto3, canvas, 1000, 0);
+        
         //Bottom left
         Picture posterphoto4 = new Picture("images/backflips.jpg");
         recolor(posterphoto4);
@@ -69,6 +69,10 @@ public class poster
             }
         }
     }
+    /**
+     Method to mirror across the x axis.
+     Do it based on height
+     */
     public static void mirrorHorizontal(Picture source)
     {
         int height = source.getHeight();
@@ -86,6 +90,7 @@ public class poster
             }
         }
     }
+    //Flips it diagonally, so it sits on its side and rotates. 
     public static void flipX(Picture source)
     {
         int size = Math.min(source.getWidth(), source.getHeight());
@@ -99,6 +104,9 @@ public class poster
             }
         }
     }
+    /**
+     Method to flip the entire image upside down
+     */
     public static void flipY(Picture source)
     {
         int height = source.getHeight();
@@ -113,6 +121,9 @@ public class poster
             }
         }
     }
+    /**
+     Method to change the colors of an image. 
+     */
     public static void recolor(Picture source)
     {
         for (int x = 0; x < source.getWidth(); x++) {
