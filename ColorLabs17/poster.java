@@ -1,9 +1,8 @@
 
 /**
  * Write a description of class poster here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Titus Park
+ * Finals week
  */
 import java.awt.*;
 import java.util.*;
@@ -36,21 +35,21 @@ public class poster
         
         //Bottom middle
         Picture posterphoto5 = new Picture("images/backflips.jpg");
-        flipX(posterphoto5);
+        rotate(posterphoto5);
         recolor2(posterphoto5);
         copytoCanvas(posterphoto5, canvas, 500, 500);
         
         //bottom right
         Picture posterphoto6 = new Picture("images/backflips.jpg");
-        flipY(posterphoto6);
+        recursive(posterphoto6, 1);
         recolor3(posterphoto6);
         copytoCanvas(posterphoto6, canvas, 1000, 500);
         
         canvas.explore();
+        canvas.write("images/posterfinal.jpg");
     }
     /**
-     Method to mirror across the y axis.
-     Do it based on width
+     Method to mirror across the y axis based on width
      */
     public static void mirrorVertical(Picture source)
     {
@@ -58,7 +57,6 @@ public class poster
         int mirrorPoint = width/2;
         Pixel leftPixel = null;
         Pixel rightPixel = null; 
-        
         //loop through all of the rows
         for (int y = 0; y < source.getHeight(); y++){
             //loop from 0 to the middle(mirror point)
@@ -77,21 +75,21 @@ public class poster
     {
         int height = source.getHeight();
         int mirrorPoint = height / 2;
-        Pixel topPixel = null;
-        Pixel bottomPixel = null;
+        Pixel topThing = null;
+        Pixel bottomThing = null;
     
-        // loop through all of the columns
+        // loop through all columns
         for (int x = 0; x < source.getWidth(); x++) {
-            // loop from 0 to the middle (mirror point)
+            // loop from 0 to the point
             for (int y = 0; y < mirrorPoint; y++) {
-                topPixel = source.getPixel(x, y);
-                bottomPixel = source.getPixel(x, height - 1 - y);
-                bottomPixel.setColor(topPixel.getColor());
+                topThing = source.getPixel(x, y);
+                bottomThing = source.getPixel(x, height - 1 - y);
+                bottomThing.setColor(topThing.getColor());
             }
         }
     }
-    //Flips it diagonally, so it sits on its side and rotates. 
-    public static void flipX(Picture source)
+    //Flips it so it sits on its side
+    public static void rotate(Picture source)
     {
         int size = Math.min(source.getWidth(), source.getHeight());
         for (int x = 0; x < size; x++) {
@@ -104,22 +102,34 @@ public class poster
             }
         }
     }
-    /**
-     Method to flip the entire image upside down
+        /**
+     * Method to print the image onto itself a buncha times using recursion
      */
-    public static void flipY(Picture source)
-    {
-        int height = source.getHeight();
-        int mirrorPoint = height / 2;
-        for (int x = 0; x < source.getWidth(); x++) {
-            for (int y = 0; y < mirrorPoint; y++) {
-                Pixel topPixel = source.getPixel(x, y);
-                Pixel bottomPixel = source.getPixel(x, height - 1 - y);  
-                Color temp = topPixel.getColor();
-                topPixel.setColor(bottomPixel.getColor());
-                bottomPixel.setColor(temp);
+    public static void recursive(Picture source, int change) {
+        int size = Math.min(source.getWidth(), source.getHeight());
+        // Base case
+        if (change > size){ 
+            return;
+        }
+        
+        // Srhink by factor
+        int SW = source.getWidth() / change;
+        int SH = source.getHeight() / change;
+        
+        for (int x = 0; x < SW; x++) {
+            for (int y = 0; y < SH; y++) {
+                // Sample from the full image, scaled down
+                int Xscale = (int)(x * (double) source.getWidth() / SW);
+                int Yscale = (int)(y * (double) source.getHeight() / SH);
+                
+                Pixel sourcei = source.getPixel(Xscale, Yscale);
+                Pixel F = source.getPixel(x, y);
+                
+                F.setColor(sourcei.getColor());
             }
         }
+        // Recurse with a larger changeominator (smaller region)
+        recursive(source, change * 2);
     }
     /**
      Method to change the colors of an image. 
@@ -224,12 +234,12 @@ public class poster
         }
     }
     //copy photo to canvas.
-    //add 2 ints to params to place you want pic on target.
+    //add 2 ints to params for locatio
     public static void copytoCanvas(Picture source, Picture target, int x, int y)
     {
         Pixel sourcePix = null;
         Pixel targetPix = null;
-        //loop through columns. (maybe change sourceX and targetX for where it starts)
+        //loop through columns. (Hayes said tochange sourceX and targetX for where it starts)
         for (int sourceX = 0, targetX = x; sourceX < source.getWidth(); sourceX++, targetX++)
         {
             for (int sourceY = 0, targetY = y; sourceY < source.getHeight(); sourceY++, targetY++)
