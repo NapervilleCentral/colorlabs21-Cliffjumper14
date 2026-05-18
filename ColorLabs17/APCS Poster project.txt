@@ -1,0 +1,21 @@
+﻿Titus Park APCS Final exam poster project reflection
+
+
+In the top left, I printed it normally, as a reference to the other photos so the changes could be clear.
+
+
+For the top middle, I mirrored it across the Y axis, mirroring it from left to right, so it only printed the left side of it on both sides, but mirrored. 
+
+
+For the top right, I did something similar to the top middle, but did it across the X axis instead, so it only printed the top part on both sides, from top to bottom. 
+
+
+For the bottom left, I reused some old code from my shepard fairy project, but I had to change some of the color ranges so the colors would match the tints better. It genuinely took me like 2 hours to do all of it, so I hope you like it. 
+
+
+For the bottom middle, I flipped it to the right, so it rotated all the pixels around. I was honestly just playing around with the code on this one trying to flip it upside down and it ended up flipping to the right and looking funnier. I liked this one a lot, but I also wanted to make it more fun colored, so I added another color method to change it as well, so it’s also purple.
+ 
+For the bottom right, I had to fulfill the recursive requirement, so I used a recursive method to print itself onto itself over and over, by calling itself by multiplying the constant which was sent to the method by 2 so it got smaller and smaller. 
+
+
+I liked this project a lot, and i hope you put it up in your room.

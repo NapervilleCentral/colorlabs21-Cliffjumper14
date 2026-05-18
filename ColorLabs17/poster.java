@@ -111,7 +111,6 @@ public class poster
         if (change > size){ 
             return;
         }
-        
         // Srhink by factor
         int SW = source.getWidth() / change;
         int SH = source.getHeight() / change;
